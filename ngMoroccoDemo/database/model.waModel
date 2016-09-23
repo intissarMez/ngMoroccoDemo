@@ -1,0 +1,111 @@
+{
+	"toJSON": true,
+	"extraProperties": {
+		"version": "2",
+		"classes": {
+			"Author": {
+				"panelColor": "#eee",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 25,
+						"Y": 20
+					},
+					"pathVisible": true
+				}
+			},
+			"Book": {
+				"panelColor": "#D7E3BC",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 360,
+						"Y": 263
+					},
+					"pathVisible": true
+				}
+			}
+		},
+		"model": {
+			"scriptMode": "manual",
+			"workspaceLeft": 0,
+			"workspaceTop": 0
+		}
+	},
+	"dataClasses": [
+		{
+			"collectionName": "AuthorCollection",
+			"className": "Author",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"type": "long",
+					"autosequence": "true",
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "name",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "bookCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "author",
+					"type": "BookCollection",
+					"kind": "relatedEntities"
+				}
+			]
+		},
+		{
+			"collectionName": "BookCollection",
+			"className": "Book",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"type": "long",
+					"autosequence": "true",
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "title",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "upvote",
+					"scope": "public",
+					"type": "number",
+					"kind": "storage"
+				},
+				{
+					"name": "downvote",
+					"scope": "public",
+					"type": "number",
+					"kind": "storage"
+				},
+				{
+					"name": "cover",
+					"scope": "public",
+					"type": "image",
+					"kind": "storage"
+				},
+				{
+					"name": "author",
+					"scope": "public",
+					"path": "Author",
+					"type": "Author",
+					"kind": "relatedEntity"
+				}
+			]
+		}
+	],
+	"type": []
+}
